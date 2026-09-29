@@ -1,60 +1,45 @@
 ---
 name: image-prompt-spec
-description: Write production image-generation and image-edit briefs for Nano Banana Pro, Seedream, GPT Image, and Qwen. Use when the user asks for an image prompt, edit prompt, reference-image roles, style lock, or why the same prompt looks different across models. Not for video, Cinema Studio, Soul ID, credits, or any vendor UI.
+description: Write still and video prompts for Nano Banana, Seedream, GPT Image, Qwen, Seedance, Kling, and Veo. Use for generation, editing, reference roles, model choice, or a shot that must stay consistent. Includes production experience from long-form AI film work. Does not cover vendor UI, credits, CLI, or Soul slots.
 license: MIT
 metadata:
   type: workflow
-  version: "1.0"
-  source: Distilled from Higgsfield production practice and vendor image guides. Platform controls removed.
+  version: "1.1"
+  source: Model dialects and field rules kept. Platform controls removed.
 ---
 
-# Image prompt spec
+# Image and video prompt spec
 
-Write a production brief, not a tag soup. Reply in the user's language. Deliver the brief in English unless the target model is Qwen and the user wants Chinese typography.
+Reply in the user's language. Deliver the prompt in English unless the target is Qwen and the user wants Chinese typography.
 
-Do not mention Higgsfield, Soul slots, Cinema Studio, credits, CLI flags, or catalog ids.
+This skill covers models and production experience. It does not cover a vendor's buttons, credit prices, CLI flags, catalog ids, or account features.
 
 ## Load map
 
-- Model dialect — `references/models.md`
-- Edit or multi-reference — `references/edit.md`
-- Worked brief — `references/examples.md`
+Read only the file the job needs.
+
+- Still image — `references/image.md`
+- Video shot — `references/video.md`
+- Which model, and how to write for it — `references/models.md`
+- Edit, references, sheets — `references/edit.md`
+- Consistency, iteration, acting — `references/discipline.md`
+- Worked briefs — `references/examples.md`
 
 ## Hard rules
 
-1. Name the finished object first (poster, packshot, keyframe, local edit).
-2. Write only what a camera can see. No "8K, masterpiece, beautiful".
-3. Assign every reference a single role. Identity, style, product, or light.
-4. Do not restate a locked face. The reference owns identity.
-5. Put on-image text in quotes and name its position.
-6. Edit in one change per pass. See `references/edit.md`.
-7. Same flaw twice means rewrite the brief.
-8. Keep the skeleton identical across models. Change density only. See `references/models.md`.
-9. If the model is unnamed, deliver the skeleton plus one dialect line.
-
-## Shared skeleton
-
-```text
-FINISH: <poster | packshot | keyframe | portrait | local edit>
-SUBJECT: <who or what, age-blind physical description, one action>
-PLACE: <where, time, weather if visible>
-CAMERA: <height, distance, lens feel in words>
-LIGHT: <source, direction, hardness, color>
-STYLE: <one medium or era, one palette>
-TEXT: "<exact string>" at <position>
-KEEP: <what must not change>
-REFS:
-  Image 1 — IDENTITY. Face and body only.
-  Image 2 — STYLE. Palette and rendering only.
-  Image 3 — PRODUCT. Shape, logo, materials.
-```
-
-Age-blind means no age number.
+1. Name the finished object first: poster, sheet, keyframe, or shot.
+2. Write what a camera can see. Material, light direction, position. No "8K masterpiece".
+3. Every reference has one role. Identity, style, product, light, location, or motion. See `references/edit.md`.
+4. With an identity reference attached, do not restate the face. Without one, paste the same descriptor every shot, word for word.
+5. On-image or spoken text goes in quotes. Duration and aspect ratio are job settings, not prompt magic.
+6. One change per edit. Mask the change back onto the untouched original. Do not run an identity base through a full generation twice.
+7. Same flaw twice means rewrite. Do not reroll the same sentence. Stop ladder is in `references/discipline.md`.
+8. Keep the skeleton. Change density per model. See `references/models.md`.
+9. There is no single best model. Route by asset class, then compare two if the job is close.
 
 ## Delivery
 
 1. The brief, ready to paste.
-2. A dialect line naming the model and the one adjustment from `references/models.md`.
+2. The model and the one dialect adjustment.
 3. The reference role list, or a note that a role is missing.
-
-Do not generate the image unless the user asked for generation.
+4. If this is a scene, the locked geography block, unchanged from the previous shot.
