@@ -1,12 +1,12 @@
 # Examples
 
-Dialect adjustments are in `models.md`. Edit lines are in `edit.md`.
+Dialects in `models.md`. Edit lines in `edit.md`. Shot blocks in `video.md`.
 
-## Weak
+## Weak still
 
 `beautiful cinematic 8k masterpiece woman, ultra realistic, trending`
 
-## Shared brief
+## Still
 
 ```text
 FINISH: keyframe
@@ -15,10 +15,11 @@ PLACE: night alley after rain, neon sign behind her right shoulder
 CAMERA: eye-level medium shot, background falling soft
 LIGHT: cool sign light from camera-right, warm practical from a doorway camera-left
 STYLE: 35mm night photograph, muted teal and amber, visible grain
-TEXT: none
 REFS:
   Image 1 — IDENTITY. Face and build only.
 ```
+
+Banana: keep it this short. Seedream: add wool weight and the wet pavement. GPT poster: move the title into JSON. Qwen: style line may name the film look in Chinese.
 
 ## Edit
 
@@ -28,16 +29,19 @@ KEEP: face, hair, pose, alley, crop
 MATCH: the existing neon and doorway light on the new cloth
 ```
 
-## GPT poster
+## Video
 
-```json
-{
-  "type": "vertical exhibition poster",
-  "style": "Swiss editorial, off-white paper, black and one red",
-  "layout": {
-    "top": { "kicker": "NIGHT STUDY" },
-    "center": "the woman from the identity reference, coat, wet alley",
-    "bottom": { "title": "AFTER RAIN" }
-  }
-}
+```text
+SCENE: EXACT 2 CHARACTERS — NO DUPLICATES: ANA, BEK.
+GEO: alley runs frame-left to frame-right. Doorway camera-left. Neon sign camera-right. Camera stays on the street side of the doorway. One light from the sign, one from the door.
+WHO: ANA at the doorway, frame-left, looking frame-right. BEK two metres toward the sign.
+ACTION: BEK stops. ANA does not step out.
+CAMERA: locked medium.
+ACTING: ANA wants him to leave and will not say it. Hands stay in the coat. BEK wants an answer. Weight on the back foot.
+AUDIO: BEK, once, low and even: "You coming?" Voice: dry tenor, slow, no accent spike.
+STYLE: 35mm night photograph, muted teal and amber, visible grain
+REFS:
+  Image 1 — ANA IDENTITY.
+  Image 2 — BEK IDENTITY.
+  Image 3 — LOCATION. Space and texture only. Do not inherit the angle.
 ```
